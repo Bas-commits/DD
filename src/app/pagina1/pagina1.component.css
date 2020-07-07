@@ -1,0 +1,14 @@
+#pagina1Div{
+    background-color: blue;
+    padding: 10rem;
+    float: left;
+    border: 5px solid red;
+    border-radius: 20%;
+    margin: 0rem 10rem 5rem 10rem;
+}
+
+.#pagina1P{
+    color: green;
+    font-size: large;
+    text-align: center;
+}

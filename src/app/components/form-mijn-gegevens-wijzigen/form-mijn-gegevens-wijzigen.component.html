@@ -1,0 +1,28 @@
+
+<form (ngSubmit)='onSubmit' #gegevensForm='ngForm'>
+    {{diagnostic}}
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input name='email'
+       [(ngModel)]='model.email' 
+        type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" 
+        required #spy>
+      TODO: remove this: {{spy.className}}
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" [(ngModel)]='model.password' name='password' class="form-control" id="exampleInputPassword1" required>
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" [(ngModel)]='model.checkout' name='checkout' class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1" >Check me out</label>
+    </div>
+    <div class="form-group">
+        <label for="power">Locatie</label>
+        <select class="form-control" id="power" [(ngModel)]='model.locatie' name='locatie' required>
+          <option *ngFor="let loc of locaties" [value]="loc">{{loc}}</option>
+        </select>
+      </div>
+    <button type="submit" class="btn btn-primary" [disabled]='!gegevensForm.form.valid' (click)='newForm(); gegevensForm.reset();'>Submit</button>
+  </form>
